@@ -16,14 +16,14 @@ const Menu = ({showMobile, listMenu}: IMenu) => {
         <div
             className={`navbarMenus ${showMobile ? 'navigation_show__4DqFs' : ''}`}>
             <ul className="navbarNav_list">
-                {listMenu?.map(ele => (
-                    <li key={ele.href} className={`${ele?.children ? 'navigation_dropdown' : ''}`}>
+                {listMenu?.map((ele, key) => (
+                    <li key={key} className={`${ele?.children ? 'navigation_dropdown' : ''}`}>
                         <a className="navLink" href={ele?.children ? null : ele.href}>{ele.title}</a>
 
                         {ele.children && ele.children.length > 0 &&
                             <ul className="navigation_dropdown">
-                                {ele?.children?.map(ch => (
-                                    <li><a href={ch.href}>{ch.title}</a></li>
+                                {ele?.children?.map((ch, k) => (
+                                    <li key={k}><a href={ch.href}>{ch.title}</a></li>
                                 ))}
                             </ul>
                         }
