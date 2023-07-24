@@ -9,7 +9,7 @@ type Props = {
 
 const CoverImage = ({title, src}: Props) => {
     const image = (
-        <img
+        <img className={'blog-single_blogSingleImageFeature__Pcef7'}
             src={src}
             alt={`Cover Image for ${title}`}
             width="100%" height="100%"

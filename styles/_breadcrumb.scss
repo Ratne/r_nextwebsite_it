@@ -1,0 +1,26 @@
+
+ .blog-single_blogSingleBreadcrumbs__dXMes ul {
+   padding: 0;
+   margin: 0 0 40px;
+   list-style: none;
+ }
+ .blog-single_blogSingleBreadcrumbs__dXMes ul li {
+   display: inline-block;
+   font-size: 16px;
+   color: #a0a7b1;
+   letter-spacing: -1px;
+   position: relative;
+ }
+ .blog-single_blogSingleBreadcrumbs__dXMes ul li:not(:last-child) {
+   margin-right: 30px;
+ }
+ .blog-single_blogSingleBreadcrumbs__dXMes ul li a {
+   display: block;
+   color: #000;
+   font-weight: 500;
+ }
+ .blog-single_blogSingleBreadcrumbs__dXMes ul li img {
+   position: absolute;
+   top: 4px;
+   right: -20px;
+ }

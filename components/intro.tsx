@@ -1,11 +1,10 @@
+import TitleApp from "./title/TitleApp";
 
 
 const Intro = () => {
-  return (
-    <section>
-
-    </section>
-  )
+    return (
+        <TitleApp/>
+    )
 }
 
 export default Intro

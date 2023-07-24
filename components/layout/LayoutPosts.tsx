@@ -1,4 +1,5 @@
 import React, {ReactNode} from 'react';
+import AsideArticle from "../asideContent/AsideArticle";
 
 const LayoutPosts = ({children}: { children: ReactNode }) => {
     return (
@@ -8,6 +9,9 @@ const LayoutPosts = ({children}: { children: ReactNode }) => {
                     <div className={'blog_blogItemWrapper'}>
                         {children}
                     </div>
+                    <aside className="blog_blogSidebar__3zyME"><h3>Popular Contents</h3>
+                        <AsideArticle/>
+                    </aside>
                 </div>
             </div>
         </section>

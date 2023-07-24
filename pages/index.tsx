@@ -8,6 +8,7 @@ import Head from 'next/head'
 import Post from '../interfaces/post'
 import Navbar from "../components/navbar/Navbar";
 import LayoutPosts from "../components/layout/LayoutPosts";
+import TitleApp from "../components/title/TitleApp";
 
 type Props = {
     allPosts: Post[]
@@ -26,8 +27,6 @@ export default function Index({allPosts}: Props) {
                     <Navbar/>
                     <Intro/>
                     <LayoutPosts>
-
-
                         {heroPost && (
                             <HeroPost
                                 title={heroPost.title}
@@ -38,7 +37,7 @@ export default function Index({allPosts}: Props) {
                                 excerpt={heroPost.excerpt}
                             />
                         )}
-                        {morePosts.length > 0 && <MoreStories posts={morePosts}/>}
+                        {/* {morePosts.length > 0 && <MoreStories posts={morePosts}/>}*/}
                     </LayoutPosts>
 
                 </Container>
