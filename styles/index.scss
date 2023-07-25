@@ -8,6 +8,10 @@
 @import "layout";
 
 
+
+.d-flex{
+  display: flex;
+}
 @keyframes modal-video-inner {
   0% {
     transform: translateY(100px);

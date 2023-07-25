@@ -14,6 +14,9 @@ import Navbar from "../../components/navbar/Navbar";
 import LayoutBlog from "../../components/layout/LayoutBlog";
 import Breadcrumb from "../../components/breadcrumb/Breadcrumb";
 import SidebarPost from "../../components/sidebar/SidebarPost";
+import {useEffect, useState} from "react";
+import useScrollPosition from "../../hook/useScrollPosition";
+import useH2elements from "../../hook/useH2elements";
 
 type Props = {
     post: PostType
@@ -27,6 +30,16 @@ export default function Post({post, morePosts, preview}: Props) {
     if (!router.isFallback && !post?.slug) {
         return <ErrorPage statusCode={404}/>
     }
+
+    const [showSidebar, setShowSidebar] = useState(false);
+    const {scrollPosition} = useScrollPosition()
+    const {h2Content} = useH2elements({text: post.content})
+
+    useEffect(() => {
+        setShowSidebar(scrollPosition > 100 ? true : false)
+    }, [scrollPosition]);
+
+
     return (
         <Layout preview={preview}>
             <Container>
@@ -42,7 +55,8 @@ export default function Post({post, morePosts, preview}: Props) {
                             <Navbar/>
                             <LayoutBlog
                                 breadcrumb={<Breadcrumb/>}
-                                sidebar={<SidebarPost/>}
+                                sidebar={<SidebarPost list={h2Content}/>}
+                                showSidebar={showSidebar}
                             >
                                 <>
                                     <PostHeader
