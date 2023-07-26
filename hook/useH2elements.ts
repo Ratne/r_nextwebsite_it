@@ -16,7 +16,6 @@ const useH2elements = ({text}: { text: string }) => {
             {
                 id: `${ele.toLowerCase().split(" ").join("")}`,
                 label: ele,
-                active: undefined
             }
         ));
         setH2Content(h2Contents)

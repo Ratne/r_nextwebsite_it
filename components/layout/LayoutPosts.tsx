@@ -9,7 +9,7 @@ const LayoutPosts = ({children}: { children: ReactNode }) => {
                     <div className={'blog_blogItemWrapper'}>
                         {children}
                     </div>
-                    <aside className="blog_blogSidebar__3zyME"><h3>Popular Contents</h3>
+                    <aside className="blog_blogSidebar"><h3>Popular Contents</h3>
                         <AsideArticle/>
                     </aside>
                 </div>
