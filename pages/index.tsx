@@ -24,7 +24,6 @@ export default function Index({allPosts}: Props) {
                     <title>INSERIRE UN TITOLO</title>
                 </Head>
                 <Container>
-                    <Navbar/>
                     <Intro/>
                     <LayoutPosts>
                         {heroPost && (

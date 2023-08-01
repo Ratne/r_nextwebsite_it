@@ -237,7 +237,16 @@ $font-family_2: Inter;*/
   }
 }
 
-.blog_blogSidebarItem__6Q0nG {
+.blog-single_container {
+  .blog_blogSidebar {
+    margin-top: 80px;
+    width: 100%;
+    padding-left: 0px;
+    display: block;
+  }
+}
+
+.blog_blogSidebarItem {
   background-color: $white;
   border-radius: 10px;
   transition: .3s cubic-bezier(.645, .045, .355, 1);
@@ -259,7 +268,7 @@ $font-family_2: Inter;*/
   }
 }
 
-.blog_blogSidebarItemImage__lgOc0 {
+.blog_blogSidebarItemImage {
   overflow: hidden;
   border-radius: 8px;
   width: 120px;
@@ -269,18 +278,18 @@ $font-family_2: Inter;*/
   }
 }
 
-.blog_blogSidebarItemContent__c0Dl6 {
+.blog_blogSidebarItemContent {
   padding-left: 10px;
   width: calc(100% - 120px);
 }
 
-.blog_blogSidebarItemTitle__dz_vB {
+.blog_blogSidebarItemTitle {
   font-weight: 400;
   margin-bottom: 4px;
   font-size: 12px;
 }
 
-.blog_blogSidebarItemSummary__0y9_t {
+.blog_blogSidebarItemSummary {
   color: $black;
   font-size: 15px;
   font-weight: 400;
@@ -386,6 +395,7 @@ $font-family_2: Inter;*/
 .blog-single_blogSingle {
   margin: 100px 0 150px;
 }
+
 .blog-single_blogSingleSidebar {
   position: fixed;
   max-height: 500px;
@@ -401,36 +411,69 @@ $font-family_2: Inter;*/
   transform: translateY(-50%);
   width: calc(15% + 60px);
   max-width: 500px;
-  left: -700px;
-  transition: all .3s cubic-bezier(.645,.045,.355,1);
+  left: -500px;
+  transition: all .3s cubic-bezier(.645, .045, .355, 1);
 }
 
 .blog-single_blogSingleSidebarIsVisible {
   left: 0;
 }
 
+@media(max-width: 1200px) {
+  .blog-single_blogSingleSidebar {
+    //display: none;
+
+    display: block;
+    position: relative;
+    max-height: initial;
+    background: #fff;
+    padding: 30px 20px;
+    border: 2px solid;
+    border-radius: 10px;
+    overflow-y: auto;
+    top: 50%;
+    z-index: 1;
+    transform: initial;
+    width: 100%;
+    max-width: initial;
+    left: initial;
+    transition: all .3s cubic-bezier(.645, .045, .355, 1);
+    max-width: 700px;
+    margin: 0px auto;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .blog-single_blogSingle {
+    margin: 50px 0 100px;
+  }
+}
+
 .blog-single_blogSingleSidebar h3 {
   font-size: 15px;
 }
-.blog-single_blogSingleSidebarToc__nfH4y ul {
+
+.blog-single_blogSingleSidebarToc ul {
   padding: 0;
 }
-.blog-single_blogSingleSidebarToc__nfH4y ul li {
+
+.blog-single_blogSingleSidebarToc ul li {
   margin-bottom: 20px;
   list-style: none;
   cursor: pointer;
   transition: all .5s ease-in-out;
 }
 
-.blog-single_blogSingleSidebarToc__nfH4y ul li:first-child {
+.blog-single_blogSingleSidebarToc ul li:first-child {
   margin-top: 24px;
 }
 
-.blog-single_blogSingleSidebarActive__Ywrmz {
+.blog-single_blogSingleSidebarActive {
   transform: translateX(7px);
 }
 
-.blog-single_blogSingleSidebarActive__Ywrmz:before {
+.blog-single_blogSingleSidebarActive:before {
   content: "";
   width: 24px;
   position: absolute;
@@ -439,34 +482,37 @@ $font-family_2: Inter;*/
   border-bottom: 2px solid #ee3094;
 }
 
-.blog-single_blogSingleSidebarActive__Ywrmz a {
-  color: #ee3094!important;
+.blog-single_blogSingleSidebarActive a {
+  color: #ee3094 !important;
   font-weight: 600;
 }
 
-.blog-single_blogSingleSidebarToc__nfH4y ul li a {
+.blog-single_blogSingleSidebarToc ul li a {
   font-size: 16px;
   line-height: 1.5;
   color: #6b7194;
 }
 
-.blog-single_blogSingleTitle__trh8B {
+.blog-single_blogSingleTitle {
   font-size: 38px;
   line-height: 48px;
   margin-bottom: 15px;
   font-weight: 400;
 }
-.blog-single_blogSingleContent__TgQu8 p {
+
+.blog-single_blogSingleContent p {
   font-size: 18px;
   line-height: 30px;
   margin-bottom: 24px;
 }
-.blog-single_blogSingleContent__TgQu8 h2 {
+
+.blog-single_blogSingleContent h2 {
   font-size: 32px;
   line-height: 44px;
   margin-top: 50px;
   margin-bottom: 15px;
 }
+
 .blog-single_blogSingleImageFeature__Pcef7 {
   width: 100%;
   border-radius: 10px;
@@ -548,10 +594,10 @@ $font-family_2: Inter;*/
   .blog_blogSidebar {
     display: none;
   }
-  .blog_blogSidebarItemContent__c0Dl6 {
+  .blog_blogSidebarItemContent {
     width: calc(100% - 100px);
   }
-  .blog_blogSidebarItemTitle__dz_vB {
+  .blog_blogSidebarItemTitle {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -596,7 +642,7 @@ $font-family_2: Inter;*/
     margin-top: 50px;
     width: 100%;
   }
-  .blog_blogSidebarItem__6Q0nG {
+  .blog_blogSidebarItem {
     display: inline-block;
     width: calc(33.33% - 10px);
     margin-right: 15px;

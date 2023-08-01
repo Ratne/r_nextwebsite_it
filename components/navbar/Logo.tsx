@@ -7,7 +7,7 @@ const Logo = () => {
                 <img alt="logo"
                      src="/images/logo.png" width="50"
                      height="50"
-                /><span>NomeAPP</span></a>
+                /><span>APP</span></a>
         </div>
     );
 };

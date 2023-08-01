@@ -8,10 +8,10 @@
 @import "layout";
 
 
-
-.d-flex{
+.d-flex {
   display: flex;
 }
+
 @keyframes modal-video-inner {
   0% {
     transform: translateY(100px);
@@ -327,6 +327,11 @@ body {
   -webkit-font-smoothing: antialiased;
   cursor: url("/images/cursor.svg"), default;
   scroll-behavior: smooth;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body {
   position: relative;
   overflow-x: hidden;
 }
@@ -1124,6 +1129,26 @@ a {
 }
 
 
+
+
+
+
+@media (max-width: 1400px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+@media (max-width: 1200px) {
+  h2 {
+    font-size: 36px;
+  }
+  .container {
+    width: 920px;
+  }
+}
+
+
 @media (orientation: landscape) {
   .modal-video-inner {
     padding: 10px 60px;
@@ -1208,20 +1233,8 @@ a {
   }
 }
 
-@media (max-width: 1200px) {
-  h2 {
-    font-size: 36px;
-  }
-  .container {
-    width: 920px;
-  }
-}
 
-@media (max-width: 1400px) {
-  .container {
-    width: 1140px;
-  }
-}
+
 
 @media (prefers-reduced-motion: reduce) {
   .accordion-button {
@@ -1407,5 +1420,14 @@ a {
     .modal-footer {
       border-radius: 0;
     }
+  }
+}
+
+
+@media (max-width: 575px) {
+  .container {
+    width: 100% !important;
+    padding-right: 20px;
+    padding-left: 20px;
   }
 }

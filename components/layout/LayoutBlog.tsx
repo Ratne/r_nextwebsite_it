@@ -9,20 +9,21 @@ const LayoutBlog = ({
                     }: { children: ReactNode, sidebar: ReactNode, breadcrumb: ReactNode, showSidebar: boolean }) => {
     return (
         <article className="blog-single_blogSingle">
-            <div
-                className={`blog-single_blogSingleSidebar ${showSidebar ? 'blog-single_blogSingleSidebarIsVisible' : ''}`}>
-                {sidebar}
-            </div>
-            <div className="blog-single_container d-flex">
-                <div style={{width: '70%'}}>
+            <div className="container blog-single_container">
+                <div>
                     {breadcrumb}
+                    <div
+                        className={`blog-single_blogSingleSidebar ${showSidebar ? 'blog-single_blogSingleSidebarIsVisible' : ''}`}>
+                        {sidebar}
+                    </div>
                     <div className="blog-single-wrapper">
                         {children}
                     </div>
+                    <aside className="blog_blogSidebar">
+                        <h3>Popular Contents</h3>
+                        <AsideArticle/>
+                    </aside>
                 </div>
-                <aside className="blog_blogSidebar"><h3>Popular Contents</h3>
-                    <AsideArticle/>
-                </aside>
             </div>
         </article>
     );

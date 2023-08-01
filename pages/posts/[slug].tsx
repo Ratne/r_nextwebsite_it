@@ -18,7 +18,6 @@ import {useEffect, useState} from "react";
 import useScrollPosition from "../../hook/useScrollPosition";
 import useH2elements from "../../hook/useH2elements";
 import useVoiceActive from "../../hook/useVoiceActive";
-import useResponsiveSize from "../../hook/useResponsiveSize";
 
 type Props = {
     post: PostType
@@ -37,7 +36,6 @@ export default function Post({post, morePosts, preview}: Props) {
     const {scrollPosition} = useScrollPosition()
     const {h2Content} = useH2elements({text: post.content})
     const {activeSection} = useVoiceActive()
-    const {size, isAboveMediaQuery, isBelowMediaQuery} = useResponsiveSize()
 
     useEffect(() => {
         setShowSidebar(scrollPosition > 100 ? true : false)
@@ -55,11 +53,10 @@ export default function Post({post, morePosts, preview}: Props) {
                                 <title>{title}</title>
                                 <meta property="og:image" content={post.ogImage.url}/>
                             </Head>
-                            <Navbar/>
                             <LayoutBlog
                                 breadcrumb={<Breadcrumb/>}
                                 sidebar={<SidebarPost list={h2Content} activeSection={activeSection}/>}
-                                showSidebar={isAboveMediaQuery('xl') ? showSidebar : false}
+                                showSidebar={showSidebar}
                             >
                                 <>
                                     <PostHeader
